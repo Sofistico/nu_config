@@ -1,0 +1,1 @@
+if i want more scripts, checkout https://github.com/nushell/nu_scripts
