@@ -924,3 +924,4 @@ def gitacp [message?: string] {
 source ./using.nu
 
 alias pq = pueue
+alias pd = pueued
