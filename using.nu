@@ -8,3 +8,4 @@ use ./scripts/completions/cargo-completions.nu *
 use ./scripts/completions/scoop-completions.nu *
 use ./scripts/completions/docker-completions.nu *
 use ./scripts/completions/rustup-completions.nu *
+use ./scripts/completions/pueue-completions.nu *
