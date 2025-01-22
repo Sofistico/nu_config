@@ -904,10 +904,6 @@ source ./starship.nu
 alias la = ls -a
 alias fzd = fzf --walker=dir,follow,hidden
 
-# ignore this, senff specific only!
-#alias nvim = C:\Users\joao.rodrigues\scoop\apps\neovim\current\bin\nvim.exe
-# can be ignored
-
 alias v = nvim
 
 def gitacp [message?: string] {
