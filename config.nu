@@ -901,8 +901,12 @@ $env.config = {
 source ~/.zoxide.nu
 source ./starship.nu
 
-def l [] {
-    ls | sort-by type
+def lst [path?: string] {
+    if $path == null {
+        ls . | sort-by type
+    } else {
+        ls $path | sort-by type
+    }
 }
 
 alias la = ls -a
