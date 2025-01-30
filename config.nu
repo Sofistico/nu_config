@@ -901,6 +901,10 @@ $env.config = {
 source ~/.zoxide.nu
 source ./starship.nu
 
+def l [] {
+    ls | sort-by type
+}
+
 alias la = ls -a
 alias fzd = fzf --walker=dir,follow,hidden
 
