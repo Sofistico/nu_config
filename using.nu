@@ -1,5 +1,5 @@
 # This here is for any kind of completions
-#use ./scripts/completions/dotnet-completions.nu * # Don't work with paths
+use ./scripts/completions/dotnet-completions.nu * # Don't work with paths
 use ./scripts/completions/git-completions.nu *
 use ./scripts/completions/rg-completions.nu *
 use ./scripts/completions/ssh-completions.nu *
