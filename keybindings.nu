@@ -6,7 +6,7 @@ def __change_dir_with_fzf [] {
         mode: emacs
         event: {
             send: executehostcommand,
-            cmd: "cd (ls | where type == dir | each { |it| $it.name} | str join (char nl) | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 | decode utf-8 | str trim)"
+            cmd: "cd (fd --type directory --follow --hidden --exclude .git | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 | decode utf-8 | str trim)"
         }
     }
 }
