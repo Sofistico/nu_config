@@ -1,0 +1,33 @@
+def __change_dir_with_fzf [] {
+    {
+        name: change_dir_with_fzf
+        modifier: CONTROL
+        keycode: char_t
+        mode: emacs
+        event: {
+            send: executehostcommand,
+            cmd: "cd (ls | where type == dir | each { |it| $it.name} | str join (char nl) | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 | decode utf-8 | str trim)"
+        }
+    }
+}
+
+def __edit_keybinding [] {
+    {
+        name: edit
+        modifier: CONTROL
+        keycode: char_v
+        mode: [emacs, vi_normal, vi_insert]
+        event: [
+            { 
+                send: executehostcommand,
+                cmd: "nvim"
+            }
+        ]
+    }
+}
+
+export-env {
+    $env.config  = ($env.config
+        | upsert keybindings ($env.config.keybindings | append [(__change_dir_with_fzf) (__edit_keybinding)])
+    )
+}

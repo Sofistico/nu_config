@@ -10,3 +10,5 @@ use ./scripts/completions/docker-completions.nu *
 use ./scripts/completions/rustup-completions.nu *
 use ./scripts/completions/pueue-completions.nu *
 use ./scripts/completions/make-completions.nu *
+
+use ./keybindings.nu *
