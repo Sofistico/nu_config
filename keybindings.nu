@@ -15,7 +15,7 @@ def __edit_keybinding [] {
     {
         name: edit
         modifier: CONTROL
-        keycode: char_e
+        keycode: char_s
         mode: [emacs, vi_normal, vi_insert]
         event: [
             { 
