@@ -941,6 +941,10 @@ def gitacp [message?: string] {
     git push
 }
 
+def killeach [processName: string] {
+    ps | where ($it.name | str downcase) =~ $processName | select pid | each { |elt| kill $elt.pid -f }
+}
+
 source ./using.nu
 
 alias pq = pueue
