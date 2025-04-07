@@ -941,8 +941,15 @@ def gitacp [message?: string] {
     git push
 }
 
+def pss [processName: string] {
+    ps | where ($it.name | str downcase) =~ $processName
+}
+
 def killeach [processName: string] {
-    ps | where ($it.name | str downcase) =~ $processName | select pid | each { |elt| kill $elt.pid -f }
+    # workaround for https://github.com/nushell/nushell/issues/13476
+    chcp 65001
+    pss $processName | select pid | each { |elt| kill -f $elt.pid }
+    chcp 850
 }
 
 source ./using.nu
