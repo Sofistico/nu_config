@@ -929,6 +929,7 @@ alias la = ls -a
 alias fzd = fzf --walker=dir,follow,hidden
 
 alias v = nvim
+alias lz = lazygit
 
 def gitacp [message?: string] {
     print '> git add .'
