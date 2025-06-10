@@ -34,13 +34,13 @@ def "nu-complete ssh-host" [] {
     let files = [
         '/etc/ssh/ssh_config',
         '~/.ssh/config'
-    ] | filter {|file| $file | path exists }
+    ] | where {|file| $file | path exists }
 
     let included_files = $files | each {|file|
         let folder = $file | path expand | path dirname
         let rel_subfiles = $file | open | lines | str trim | where { |s| $s | str starts-with 'Include' } | each { |s| $s | parse --regex '^Include\s+(?<subfile>.+)' | get subfile | str replace -a '"' '' } | flatten
         $rel_subfiles | each { |f| $folder | path join $f }
-    } | flatten | filter { |p| $p | path exists }
+    } | flatten | where { |p| $p | path exists }
 
 
     [ ...$files, ...$included_files ] | each {|file|
