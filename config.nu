@@ -957,3 +957,11 @@ source ./using.nu
 
 alias pq = pueue
 alias pqd = pueued
+
+def vs [pipeName: string] {
+  pq add -i nvim --listen $'\\.\pipe\($pipeName)' --headless
+}
+
+def vl [pipeName: string] {
+  nvim --server $'\\.\pipe\($pipeName)' --remote-ui
+}
