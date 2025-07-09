@@ -959,6 +959,10 @@ alias pq = pueue
 alias pqd = pueued
 
 def vs [pipeName: string] {
+  job spawn { nvim --listen $'\\.\pipe\($pipeName)' --headless }
+}
+
+def vsd [pipeName: string] {
   pq add -i nvim --listen $'\\.\pipe\($pipeName)' --headless
 }
 
