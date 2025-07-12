@@ -957,9 +957,10 @@ source ./using.nu
 
 alias pq = pueue
 alias pqd = pueued
+alias g = git
 
 def vs [pipeName: string] {
-  job spawn { nvim --listen $'\\.\pipe\($pipeName)' --headless }
+  job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
 }
 
 def vsd [pipeName: string] {
