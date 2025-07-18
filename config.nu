@@ -970,3 +970,11 @@ def vsd [pipeName: string] {
 def vl [pipeName: string] {
   nvim --server $'\\.\pipe\($pipeName)' --remote-ui
 }
+
+def findport [port?: string] {
+  if ($port != null) {
+    netstat -ano | findstr $':($port)'
+  } else {
+    netstat -ano
+  }
+}
