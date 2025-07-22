@@ -15,7 +15,7 @@ def __open_file_in_vim_with_fzf [] {
     {
         name: open_file_in_vim_with_fzf
         modifier: CONTROL
-        keycode: char_f
+        keycode: char_e
         mode: emacs
         event: {
             send: executehostcommand,
