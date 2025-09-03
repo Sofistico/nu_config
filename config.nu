@@ -958,6 +958,9 @@ source ./using.nu
 alias pq = pueue
 alias pqd = pueued
 alias g = git
+alias gs = git status
+alias gf = git fetch
+alias gp = git pull --ff-only
 
 def vs [pipeName: string] {
   job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
