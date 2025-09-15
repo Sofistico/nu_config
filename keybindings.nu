@@ -6,7 +6,7 @@ def __change_dir_with_fzf [] {
         mode: emacs
         event: {
             send: executehostcommand,
-            cmd: "cd (fd --type directory --follow --hidden --exclude .git | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 | decode utf-8 | str trim)"
+            cmd: "cd (fd --type directory --follow --hidden --exclude .git | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='cd to dir' | decode utf-8 | str trim)"
         }
     }
 }
@@ -19,7 +19,7 @@ def __open_file_in_vim_with_fzf [] {
         mode: emacs
         event: {
             send: executehostcommand,
-            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5)"
+            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='Open with nvim')"
         }
     }
 }

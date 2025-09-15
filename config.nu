@@ -961,6 +961,7 @@ alias g = git
 alias gs = git status
 alias gf = git fetch
 alias gp = git pull --ff-only
+alias gc = git checkout
 
 def vs [pipeName: string] {
   job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
