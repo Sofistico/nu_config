@@ -83,6 +83,6 @@ def findport [port?: string] {
   }
 }
 
-def curlp [url: string, json: string] {
-  curl -X 'POST' -H "Content-Type: application/json" -H "accept: */*" -d $json $url
+def curlj [url: string, json: string, flags?: string] {
+  curl $flags -H "Content-Type: application/json" -H "accept: */*" -d $json $url
 }
