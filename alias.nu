@@ -87,6 +87,6 @@ def curlj [url: string, json: string, flags?: string] {
   curl $flags -H "Content-Type: application/json" -H "accept: */*" -d $json $url
 }
 
-def prunebranches[]{
+def prunebranches [] {
   git fetch; git branch --merged | rg -v 'master|develop|main|release' | xargs git branch -d
 }
