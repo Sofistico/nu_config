@@ -90,3 +90,7 @@ def curlj [url: string, json: string, flags?: string] {
 def prunebranches [] {
   git fetch; git branch --merged | rg -v 'master|develop|main|release' | xargs git branch -d
 }
+
+def rmshada [] {
+  rm -rf ~/AppData/Local/nvim-data/shada
+}
