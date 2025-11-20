@@ -57,11 +57,14 @@ def killeach [processName: string] {
 
 alias pq = pueue
 alias pqd = pueued
+
+# git aliases
 alias g = git
 alias gs = git status
 alias gf = git fetch
 alias gp = git pull --ff-only
 alias gc = git checkout
+alias gpu = git push
 
 def vs [pipeName: string] {
   job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
