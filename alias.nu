@@ -70,6 +70,7 @@ alias gpu = git push
 alias dr = dotnet run
 alias dw = dotnet watch
 alias db = dotnet build
+alias dt = dotnet restore
 
 def vs [pipeName: string] {
   job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
