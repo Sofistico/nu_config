@@ -59,7 +59,6 @@ alias pq = pueue
 alias pqd = pueued
 
 # git aliases
-alias g = git
 alias gs = git status
 alias gf = git fetch
 alias gp = git pull --ff-only
