@@ -19,7 +19,20 @@ def __open_file_in_vim_with_fzf [] {
         mode: emacs
         event: {
             send: executehostcommand,
-            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='Open with nvim')"
+            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='Open file with nvim')"
+        }
+    }
+}
+
+def __open_cwd_in_vim_with_fzf [] {
+    {
+        name: open_cwd_in_vim_with_fzf
+        modifier: CONTROL
+        keycode: char_v
+        mode: emacs
+        event: {
+            send: executehostcommand,
+            cmd: "cd (fd --type directory --follow --hidden --exclude .git | fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='Open cwd with nvim' | decode utf-8 | str trim) | nvim "
         }
     }
 }
@@ -41,6 +54,6 @@ def __edit_keybinding [] {
 
 export-env {
     $env.config  = ($env.config
-        | upsert keybindings ($env.config.keybindings | append [(__change_dir_with_fzf) (__open_file_in_vim_with_fzf) (__edit_keybinding)])
+        | upsert keybindings ($env.config.keybindings | append [(__change_dir_with_fzf) (__open_file_in_vim_with_fzf) (__open_cwd_in_vim_with_fzf) (__edit_keybinding)])
     )
 }
