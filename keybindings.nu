@@ -19,7 +19,7 @@ def __open_file_in_vim_with_fzf [] {
         mode: emacs
         event: {
             send: executehostcommand,
-            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --border-label='Open file with nvim')"
+            cmd: "nvim (fzf --preview-window=right,60%,border-left --bind ctrl-u:preview-half-page-up --bind ctrl-d:preview-half-page-down --bind ctrl-e:toggle-preview --layout=reverse --cycle --scroll-off=5 --border --preview 'bat --color=always {}' --border-label='Open file with nvim')"
         }
     }
 }

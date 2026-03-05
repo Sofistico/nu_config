@@ -64,6 +64,7 @@ alias gf = git fetch
 alias gp = git pull --ff-only
 alias gc = git checkout
 alias gpu = git push
+alias gcm = git commit -m
 
 # dotnet alias
 alias dr = dotnet run
