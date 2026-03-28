@@ -103,3 +103,5 @@ def prunebranches [] {
 def rmshada [] {
   rm -rf ~/AppData/Local/nvim-data/shada
 }
+
+alias s = s -p google
