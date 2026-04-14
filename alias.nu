@@ -73,7 +73,7 @@ alias db = dotnet build
 alias dre = dotnet restore
 
 def vs [pipeName: string] {
-  job spawn -t 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
+  job spawn -d 'nvim-instance' { nvim --listen $'\\.\pipe\($pipeName)' --headless }
 }
 
 def vsd [pipeName: string] {
