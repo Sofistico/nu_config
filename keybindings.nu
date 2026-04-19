@@ -28,7 +28,7 @@ def __open_cwd_in_vim_with_fzf [] {
     {
         name: open_cwd_in_vim_with_fzf
         modifier: CONTROL
-        keycode: char_v
+        keycode: char_i
         mode: emacs
         event: {
             send: executehostcommand,
