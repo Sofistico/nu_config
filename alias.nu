@@ -45,7 +45,7 @@ def gitacp [message?: string] {
 }
 
 def pss [processName: string] {
-    ps | where ($it.name | str downcase) =~ $processName
+    ps | where ($it.name | str lowercase) =~ $processName
 }
 
 def killeach [processName: string] {
