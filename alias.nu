@@ -61,6 +61,7 @@ alias pqd = pueued
 # git aliases
 alias gs = git status -s
 alias gf = git fetch
+alias gfp = git fetch -p -P
 alias gp = git pull --ff-only
 alias gc = git checkout
 alias gpu = git push
@@ -96,8 +97,8 @@ def curlj [url: string, json: string, flags?: string] {
   curl $flags -H "Content-Type: application/json" -H "accept: */*" -d $json $url
 }
 
-def prunebranches [] {
-  git fetch; git branch --merged | rg -v 'master|develop|main|release' | xargs git branch -d
+def git-branch-prune [] {
+  git fetch -p -P; git branch --merged | rg -v 'master|develop|main|release' | xargs git branch -d
 }
 
 def rmshada [] {
