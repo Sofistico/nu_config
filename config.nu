@@ -894,7 +894,8 @@ $env.config = {
 }
 
 source ~/.zoxide.nu
-source ./starship.nu
 source ./alias.nu
 source ./using.nu
 
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
