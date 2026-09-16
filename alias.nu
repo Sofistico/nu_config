@@ -106,3 +106,9 @@ def rmshada [] {
 }
 
 alias s = s -p google
+
+alias claude-nv = claude --append-system-prompt 'no explanation, no code fences, never use fences, you are being called from stdin as a tool inside neovim' -p
+
+alias py = python
+
+alias y = yazi
