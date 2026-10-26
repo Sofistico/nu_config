@@ -1,5 +1,5 @@
-def "nu-complete zoxide path" [context: string] {
-    let parts = $context | str trim --left | split row " " | skip 1 | each { str lowercase }
+def "nu-complete zoxide path" [buffer: string] {
+    let parts = $buffer | str trim --left | split row " " | skip 1 | each { str lowercase }
     let completions = (
         ^zoxide query --list --exclude $env.PWD -- ...$parts
             | lines
