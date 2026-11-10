@@ -500,6 +500,7 @@ export extern "git rm" [
 ]
 
 # Show the working tree status
+@structured [--porcelain] { lines | parse --regex '^(?<status>..) (?<file>.+)$' }
 export extern "git status" [
   --verbose(-v)                                       # be verbose
   --short(-s)                                         # show status concisely
