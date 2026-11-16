@@ -386,6 +386,8 @@ $env.config = {
     ]
 }
 
+$env.config.show_banner = false
+
 source ~/.zoxide.nu
 source ./alias.nu
 source ./using.nu
